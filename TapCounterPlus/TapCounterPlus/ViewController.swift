@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     
     var score = 0
-    var time = 10
+    var time = 5
     var timer = Timer()
     var gameStatus = GameStatus.willGame
     
@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timeLabel.text = String(time)
     }
 
     @IBAction func tapButton(_ sender: Any) {
@@ -56,9 +57,10 @@ class ViewController: UIViewController {
     @IBAction func resetButton(_ sender: Any) {
         score = 0
         scoreLabel.text = String(score)
-        time = 10
+        time = 5
         timeLabel.text = String(time)
         timer.invalidate()
+        gameStatus = GameStatus.willGame
     }
     
     @objc func countDown() {
