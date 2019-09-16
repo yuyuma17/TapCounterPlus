@@ -46,7 +46,10 @@ class ViewController: UIViewController {
         case .deadGame:
             if time == 0 {
                 score = score + 0
-                scoreLabel.text = String(score)
+                let alert = UIAlertController(title: "Congratulation!", message: "You got \(score) points!", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
             }
         @unknown default:
             print("I don't know")
