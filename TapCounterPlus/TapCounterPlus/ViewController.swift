@@ -52,7 +52,7 @@ class ViewController: UIViewController {
                 present(alert, animated: true, completion: nil)
             }
         @unknown default:
-            print("I don't know")
+            break
         }
 
     }
