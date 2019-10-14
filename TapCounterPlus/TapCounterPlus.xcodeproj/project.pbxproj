@@ -12,6 +12,7 @@
 		16AE58E5232F76CE00ADB87B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16AE58E3232F76CE00ADB87B /* Main.storyboard */; };
 		16AE58E7232F76CF00ADB87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AE58E6232F76CF00ADB87B /* Assets.xcassets */; };
 		16AE58EA232F76CF00ADB87B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16AE58E8232F76CF00ADB87B /* LaunchScreen.storyboard */; };
+		16B7E26D23545F64008737DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 16B7E26C23545F64008737DF /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		16AE58E6232F76CF00ADB87B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16AE58E9232F76CF00ADB87B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16AE58EB232F76CF00ADB87B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16B7E26C23545F64008737DF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		16AE58D3232F76CE00ADB87B = {
 			isa = PBXGroup;
 			children = (
+				16B7E26C23545F64008737DF /* README.md */,
 				16AE58DE232F76CE00ADB87B /* TapCounterPlus */,
 				16AE58DD232F76CE00ADB87B /* Products */,
 			);
@@ -124,6 +127,7 @@
 			files = (
 				16AE58EA232F76CF00ADB87B /* LaunchScreen.storyboard in Resources */,
 				16AE58E7232F76CF00ADB87B /* Assets.xcassets in Resources */,
+				16B7E26D23545F64008737DF /* README.md in Resources */,
 				16AE58E5232F76CE00ADB87B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lacie.TapCounterPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lacie.TapCounterPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

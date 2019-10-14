@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var tapButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
                 let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(action)
                 present(alert, animated: true, completion: nil)
+                tapButtonOutlet.isEnabled = false
             }
         }
 
@@ -62,6 +64,7 @@ class ViewController: UIViewController {
         timeLabel.text = String(time)
         timer.invalidate()
         gameStatus = GameStatus.willGame
+        tapButtonOutlet.isEnabled = true
     }
     
     @objc func countDown() {
