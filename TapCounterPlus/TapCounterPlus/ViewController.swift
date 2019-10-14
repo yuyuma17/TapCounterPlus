@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     enum GameStatus {
         case notYetStart
         case inGaming
-        case gameOver
     }
     
     var score = 0
@@ -41,15 +40,6 @@ class ViewController: UIViewController {
         case .inGaming:
             score = score + 1
             scoreLabel.text = String(score)
-            if time == 0 {
-                gameStatus = GameStatus.gameOver
-            }
-        case .gameOver:
-            let alert = UIAlertController(title: "Congratulation!", message: "You got \(score) points!", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-            tapButtonIBOutlet.isEnabled = false
         }
     }
     
@@ -69,6 +59,11 @@ class ViewController: UIViewController {
         
         if time == 0 {
             timer.invalidate()
+            tapButtonIBOutlet.isEnabled = false
+            let alert = UIAlertController(title: "Congratulation!", message: "You got \(score) points!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
     }
     
