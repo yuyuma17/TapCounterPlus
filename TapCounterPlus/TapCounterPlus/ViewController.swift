@@ -9,65 +9,61 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var tapButtonIBOutlet: UIButton!
+    
     enum GameStatus {
-        case willGame
-        case gaming
-        case deadGame
+        case notYetStart
+        case inGaming
+        case gameOver
     }
     
     var score = 0
     var time = 5
     var timer = Timer()
-    var gameStatus = GameStatus.willGame
-    
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var tapButtonOutlet: UIButton!
+    var gameStatus = GameStatus.notYetStart
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel.text = String(time)
     }
 
-    @IBAction func tapButton(_ sender: Any) {
+    @IBAction func tapButton(_ sender: UIButton) {
+        
         switch gameStatus {
-
-        case .willGame:
+            
+        case .notYetStart:
             score = score + 1
             scoreLabel.text = String(score)
             startToCountDown()
-            gameStatus = GameStatus.gaming
-        case .gaming:
+            gameStatus = GameStatus.inGaming
+        case .inGaming:
             score = score + 1
             scoreLabel.text = String(score)
             if time == 0 {
-                gameStatus = GameStatus.deadGame
+                gameStatus = GameStatus.gameOver
             }
-        case .deadGame:
-            if time == 0 {
-                score = score + 0
-                let alert = UIAlertController(title: "Congratulation!", message: "You got \(score) points!", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(action)
-                present(alert, animated: true, completion: nil)
-                tapButtonOutlet.isEnabled = false
-            }
+        case .gameOver:
+            let alert = UIAlertController(title: "Congratulation!", message: "You got \(score) points!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            tapButtonIBOutlet.isEnabled = false
         }
-
     }
     
-    @IBAction func resetButton(_ sender: Any) {
+    @IBAction func resetButton(_ sender: UIButton) {
         score = 0
         scoreLabel.text = String(score)
         time = 5
         timeLabel.text = String(time)
         timer.invalidate()
-        gameStatus = GameStatus.willGame
-        tapButtonOutlet.isEnabled = true
+        gameStatus = GameStatus.notYetStart
+        tapButtonIBOutlet.isEnabled = true
     }
     
-    @objc func countDown() {
+    @objc func timeCountDown() {
         time = time - 1
         timeLabel.text = String(time)
         
@@ -77,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     func startToCountDown() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeCountDown), userInfo: nil, repeats: true)
     }
 }
 

@@ -63,7 +63,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scoreLabel" destination="UQd-qC-CnX" id="kqC-gY-jGi"/>
-                        <outlet property="tapButtonOutlet" destination="xfj-bY-hIg" id="Hbm-QD-Wi7"/>
+                        <outlet property="tapButtonIBOutlet" destination="xfj-bY-hIg" id="Hbm-QD-Wi7"/>
                         <outlet property="timeLabel" destination="JG9-43-4Lw" id="zzn-aY-wAb"/>
                     </connections>
                 </viewController>
